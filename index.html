@@ -1,82 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shrawan Dahal Upadhaya | Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg-dark: #05070f;
+      --bg-mid: #0d1224;
+      --accent: #ffb703;
+      --accent-soft: #4da3ff;
+      --text-main: #f5f6ff;
+      --text-muted: #b6bddb;
+      --card-bg: #121735;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0f0f0f;
-      color: #eaeaea;
-      line-height: 1.7;
+      background: linear-gradient(180deg, var(--bg-dark), var(--bg-mid));
+      color: var(--text-main);
+      line-height: 1.8;
     }
+
     a {
-      color: #4da3ff;
+      color: var(--accent-soft);
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+
     a:hover {
-      text-decoration: underline;
+      color: var(--accent);
     }
+
+    header {
+      padding: 140px 20px 100px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.6rem;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
     section {
       max-width: 1000px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
-    h1, h2 {
-      font-weight: 700;
-    }
+
     h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1.05rem;
-      color: #d0d0d0;
-    }
-    .hero {
-      text-align: center;
-      padding-top: 120px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    .tagline {
-      font-size: 1.3rem;
-      color: #a5c8ff;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
       margin-bottom: 30px;
     }
-    .divider {
-      height: 1px;
-      background: #2a2a2a;
-      margin: 60px 0;
+
+    .about p {
+      margin-bottom: 20px;
+      color: var(--text-muted);
     }
-    .grid {
+
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
     }
-    .card {
-      background: #161616;
-      padding: 25px;
-      border-radius: 12px;
+
+    .service-card {
+      background: linear-gradient(145deg, var(--card-bg), #0b102a);
+      padding: 35px;
+      border-radius: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .socials a {
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(77,163,255,0.25);
+    }
+
+    .service-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .links a {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 100px 20px;
+      background: radial-gradient(circle at center, #141a3d, #060913);
+    }
+
+    .cta a {
       display: inline-block;
-      margin: 8px 15px 0 0;
-      font-weight: 500;
+      margin-top: 25px;
+      padding: 14px 36px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+      color: #000;
+      font-weight: 600;
     }
+
     footer {
       text-align: center;
-      padding: 40px 20px;
-      background: #0a0a0a;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 50px 20px;
+      color: #8d94c9;
+      background: #03040a;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -84,95 +141,75 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <header>
     <h1>Shrawan Dahal Upadhaya</h1>
     <div class="tagline">Capturing moments. Communicating meaning.</div>
-    <p>Media & Communication Professional • Photographer • Researcher</p>
-  </section>
-
-  <div class="divider"></div>
+    <p>Media & Communication Professional · Photographer · Researcher</p>
+  </header>
 
   <!-- ABOUT -->
-  <section>
+  <section class="about">
     <h2>About Me</h2>
     <p>
       I work at the intersection of storytelling, media, and social change. Trained in Journalism and Mass Communication,
       I have spent the past several years using communication as a tool—not just to inform, but to connect, question,
-      and inspire action. My professional journey has taken me into the development sector, where I have worked as a
-      Program Officer and Communication Officer with NGOs and community-based organizations, shaping narratives around
-      education, youth engagement, and social awareness.
+      and inspire action. My professional journey spans the development sector, where I have worked with NGOs and
+      community-based organizations as a Program and Communication Officer.
     </p>
     <p>
-      Beyond written words, I speak through images. Photography has been a core part of my creative practice since 2020,
-      allowing me to document people, places, and moments that often go unnoticed. For me, a photograph is not just
-      visual content—it is evidence, memory, and emotion.
+      Photography has been a core part of my creative practice since 2020. Through images, I document people, places,
+      and moments that often go unnoticed. For me, photography is not decoration—it is evidence, memory, and emotion.
     </p>
     <p>
-      I am deeply interested in how technology is reshaping communication—from digital media to artificial intelligence—
-      particularly in the context of Nepal and South Asia. Curious by nature and grounded in purpose, I believe that
-      meaningful stories, when told responsibly, have the power to create understanding—and understanding can lead to change.
+      I am deeply interested in how digital media and artificial intelligence are reshaping communication, particularly
+      in Nepal and South Asia. My work is guided by a belief that meaningful stories, when told responsibly, can create
+      understanding—and understanding can lead to change.
     </p>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WHAT I DO -->
+  <!-- SERVICES -->
   <section>
     <h2>What I Do</h2>
-    <div class="grid">
-      <div class="card">
+    <div class="services">
+      <div class="service-card">
         <h3>Media & Communication</h3>
-        <p>Strategic communication, content creation, digital storytelling, and advocacy-focused media work.</p>
+        <p>Strategic communication, content development, storytelling, and digital advocacy.</p>
       </div>
-      <div class="card">
+      <div class="service-card">
         <h3>Photography</h3>
-        <p>Documentary, social, and visual storytelling photography rooted in context and human experience.</p>
+        <p>Documentary and visual storytelling focused on people, culture, and social context.</p>
       </div>
-      <div class="card">
+      <div class="service-card">
         <h3>Research & Writing</h3>
-        <p>Exploring media, technology, AI, and communication practices with a focus on Nepal and South Asia.</p>
+        <p>Exploring media, AI, digital literacy, and communication practices.</p>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WORK & LINKS -->
+  <!-- LINKS -->
   <section>
-    <h2>Portfolio & Publications</h2>
-    <p>
-      • <a href="https://www.behance.net/shrawanupdahal" target="_blank">Behance – Visual & Design Work</a><br>
-      • <a href="https://500px.com/p/dahalshrawan?view=photos" target="_blank">500px – Photography Portfolio</a>
-    </p>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CV -->
-  <section>
-    <h2>Curriculum Vitae</h2>
-    <p>
-      You can view or download my full CV here:<br>
-      <a href="https://docs.google.com/document/d/1Img9Wun1OfANZILz_27lCbetYGI1SKVsn_hhTyqYHVU/edit" target="_blank">
-        Download CV (Google Docs)
-      </a>
-    </p>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- SOCIALS -->
-  <section>
-    <h2>Connect With Me</h2>
-    <div class="socials">
+    <h2>Work & Presence</h2>
+    <div class="links">
+      <a href="https://www.behance.net/shrawanupdahal" target="_blank">Behance – Visual Portfolio</a>
+      <a href="https://500px.com/p/dahalshrawan?view=photos" target="_blank">500px – Photography</a>
       <a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">LinkedIn</a>
       <a href="https://www.instagram.com/shrawan_updahal/" target="_blank">Instagram</a>
       <a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">Facebook</a>
+      <a href="https://docs.google.com/document/d/1Img9Wun1OfANZILz_27lCbetYGI1SKVsn_hhTyqYHVU/edit" target="_blank">
+        Download CV
+      </a>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Let’s Tell Meaningful Stories</h2>
+    <p>Open to collaborations, research, and creative projects.</p>
+    <a href="mailto:your-email@example.com">Get in Touch</a>
+  </section>
+
   <footer>
-    © 2026 Shrawan Dahal Upadhaya • Built with purpose and simplicity
+    © 2026 Shrawan Dahal Upadhaya · Built with clarity & intention
   </footer>
 
 </body>

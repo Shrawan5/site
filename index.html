@@ -1,310 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shrawan Dahal Upadhaya | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrawan Dahal Upadhaya | Portfolio</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f7f8fc;
-      --white: #ffffff;
-      --text-dark: #121212;
-      --text-muted: #555555;
-      --accent: #ff6f00;
-      --accent-soft: #ff9c4a;
-      --shadow: rgba(0,0,0,0.08);
-    }
+<style>
+:root {
+  --primary: #6a5cff;
+  --secondary: #00c9a7;
+  --accent: #ff8c42;
+  --bg: linear-gradient(135deg, #fdfbfb, #ebedee);
+  --card-bg: rgba(255,255,255,0.75);
+  --text-dark: #1f2937;
+}
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.7;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
 
-    a:hover {
-      color: var(--accent-soft);
-    }
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
 
-    /* FIXED NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 12px var(--shadow);
-      z-index: 1000;
-    }
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .nav-container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 14px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav h1 {
+  font-weight: 800;
+  color: var(--primary);
+}
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
 
-    .nav-links a {
-      margin-left: 26px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+}
 
-    header {
-      text-align: center;
-      padding: 190px 20px 100px;
-      max-width: 1000px;
-      margin: auto;
-    }
+nav a:hover {
+  color: var(--primary);
+}
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.4rem;
-      margin-bottom: 10px;
-    }
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 6rem 2rem;
+}
 
-    .tagline {
-      font-size: 1.45rem;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
-    header p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-    }
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+}
 
-    section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 90px 22px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.9s ease;
-    }
+.hero span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  max-width: 650px;
+}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin-bottom: 22px;
-    }
+.tagline {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
 
-    /* ABOUT */
-    .about p {
-      margin-bottom: 18px;
-      font-size: 1.05rem;
-      color: var(--text-muted);
-    }
+/* ---------- ABOUT ---------- */
+.about {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
 
-    /* WORK & PRESENCE */
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 30px;
-    }
+/* ---------- DYNAMIC CARDS ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
 
-    .work-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 8px 24px var(--shadow);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-    .work-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 40px var(--shadow);
-    }
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
 
-    .work-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.35rem;
-    }
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
 
-    .work-card p {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-    }
+.card a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--secondary);
+}
 
-    .work-card a {
-      display: inline-block;
-      margin-top: 14px;
-      font-weight: 600;
-    }
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #ffffff;
+  margin-top: 4rem;
+}
 
-    /* CV */
-    .cv-box {
-      background: var(--white);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px var(--shadow);
-      max-width: 600px;
-    }
+/* ---------- ANIMATIONS ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      background: var(--white);
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.6rem;
-      }
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+<header>
   <nav>
-    <div class="nav-container">
-      <div class="logo">Shrawan Dahal</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+    <h1>Shrawan</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#presence">Presence</a></li>
+      <li><a href="#contact">CV</a></li>
+    </ul>
   </nav>
+</header>
 
-  <!-- HERO -->
-  <header>
-    <h1>Shrawan Dahal Upadhaya</h1>
-    <div class="tagline">Capturing moments. Communicating meaning.</div>
-    <p>Media & Communication Professional · Photographer · Researcher</p>
-  </header>
+<section class="hero">
+  <div>
+    <h2 class="fade-up">Capturing moments.<br><span>Communicating meaning.</span></h2>
+    <p class="tagline fade-up">Stories, media, and visuals with purpose</p>
+    <p class="fade-up">
+      I work at the intersection of storytelling, media, and social change — blending journalism, photography, and digital innovation to create narratives that matter.
+    </p>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
+<section id="about">
+  <div class="about fade-up">
     <h2>About Me</h2>
     <p>
-      I work at the intersection of storytelling, media, and social change. Trained in Journalism and Mass Communication,
-      I have spent the past several years using communication as a tool—not just to inform, but to connect, question,
-      and inspire action. My professional journey has taken me into the development sector, where I have worked as a
-      Program Officer and Communication Officer with NGOs and community-based organizations, shaping narratives around
-      education, youth engagement, and social awareness.
+      Trained in Journalism and Mass Communication, I have worked as a Program Officer and Communication Officer with NGOs and community-based organizations, shaping narratives around education, youth engagement, and social awareness.
     </p>
     <p>
-      Beyond written words, I speak through images. Photography has been a core part of my creative practice since 2020,
-      allowing me to document people, places, and moments that often go unnoticed. For me, a photograph is not just
-      visual content—it is evidence, memory, and emotion.
+      Photography has been a core part of my creative practice since 2020 — documenting people, places, and moments that often go unnoticed. My work blends aesthetics with responsibility.
     </p>
     <p>
-      I am deeply interested in how technology is reshaping communication. From digital media to artificial intelligence,
-      I explore how emerging tools can enhance storytelling, improve access to information, and strengthen civic engagement—
-      particularly in the context of Nepal and South Asia. Curious by nature and grounded in purpose, I believe that
-      meaningful stories, when told responsibly, have the power to create understanding—and understanding can lead to change.
+      I am deeply interested in digital media, artificial intelligence, and how emerging technologies can strengthen civic engagement — particularly in Nepal and South Asia.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- WORK -->
-  <section id="work">
-    <h2>Work & Presence</h2>
-    <div class="work-grid">
-      <div class="work-card">
-        <h3>Behance</h3>
-        <p>Visual and design-focused portfolio showcasing curated creative work.</p>
-        <a href="https://www.behance.net/shrawanupdahal" target="_blank">View on Behance →</a>
-      </div>
-      <div class="work-card">
-        <h3>500px</h3>
-        <p>Photography gallery highlighting people, places, and moments.</p>
-        <a href="https://500px.com/p/dahalshrawan?view=photos" target="_blank">Explore Photos →</a>
-      </div>
-      <div class="work-card">
-        <h3>LinkedIn</h3>
-        <p>Professional experience, research interests, and communication work.</p>
-        <a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">Connect →</a>
-      </div>
-      <div class="work-card">
-        <h3>Instagram</h3>
-        <p>Visual storytelling and photography from the field.</p>
-        <a href="https://www.instagram.com/shrawan_updahal/" target="_blank">Follow →</a>
-      </div>
-      <div class="work-card">
-        <h3>Facebook</h3>
-        <p>Personal and professional updates.</p>
-        <a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">Visit Profile →</a>
-      </div>
+<section id="work">
+  <h2 class="fade-up">Work</h2>
+  <div class="grid">
+    <div class="card fade-up">
+      <h3>Photography</h3>
+      <p>Visual storytelling through people, culture, and everyday life.</p>
+      <a href="https://www.behance.net/shrawanupdahal" target="_blank">View on Behance →</a>
     </div>
-  </section>
-
-  <!-- CV -->
-  <section id="cv">
-    <h2>Curriculum Vitae</h2>
-    <div class="cv-box">
-      <p>You can view or download my complete CV here:</p>
-      <a href="https://docs.google.com/document/d/1Img9Wun1OfANZILz_27lCbetYGI1SKVsn_hhTyqYHVU/edit" target="_blank">
-        Download CV →
-      </a>
+    <div class="card fade-up">
+      <h3>Research & Writing</h3>
+      <p>Media, AI, digital literacy, and communication in South Asia.</p>
+      <a href="https://tribhuvan.academia.edu/ShrawanDahalUpadhaya" target="_blank">Academia Profile →</a>
     </div>
-  </section>
+    <div class="card fade-up">
+      <h3>Visual Archive</h3>
+      <p>Curated photography collections.</p>
+      <a href="https://500px.com/p/dahalshrawan?view=photos" target="_blank">500px Gallery →</a>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Open to collaborations, research, and creative projects.<br>
-      Reach out via LinkedIn or email.
-    </p>
-  </section>
+<section id="presence">
+  <h2 class="fade-up">Presence</h2>
+  <div class="grid">
+    <div class="card fade-up"><a href="https://www.instagram.com/shrawan_updahal/" target="_blank">Instagram</a></div>
+    <div class="card fade-up"><a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">Facebook</a></div>
+    <div class="card fade-up"><a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">LinkedIn</a></div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Shrawan Dahal Upadhaya • Portfolio Website
-  </footer>
+<section id="contact">
+  <h2 class="fade-up">Curriculum Vitae</h2>
+  <div class="card fade-up">
+    <p>Download my CV for academic, research, and professional details.</p>
+    <a href="https://docs.google.com/document/d/1Img9Wun1OfANZILz_27lCbetYGI1SKVsn_hhTyqYHVU/edit" target="_blank">Download CV →</a>
+  </div>
+</section>
 
-  <!-- SCROLL ANIMATION -->
-  <script>
-    const sections = document.querySelectorAll("section");
+<footer>
+  © 2025 Shrawan Dahal Upadhaya · Capturing moments. Communicating meaning.
+</footer>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.15 });
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
 
-    sections.forEach(section => observer.observe(section));
-  </script>
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

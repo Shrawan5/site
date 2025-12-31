@@ -10,10 +10,10 @@
 
   <style>
     :root {
-      --bg: #fafafa;
+      --bg: #f7f8fc;
       --white: #ffffff;
-      --text-dark: #111;
-      --text-muted: #555;
+      --text-dark: #121212;
+      --text-muted: #555555;
       --accent: #ff6f00;
       --accent-soft: #ff9c4a;
       --shadow: rgba(0,0,0,0.08);
@@ -35,27 +35,28 @@
     a {
       color: var(--accent);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
+
     a:hover {
       color: var(--accent-soft);
     }
 
-    /* FIXED HEADER */
+    /* FIXED NAVIGATION */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px var(--shadow);
       z-index: 1000;
-      box-shadow: 0 2px 10px var(--shadow);
     }
 
     .nav-container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-      padding: 14px 20px;
+      padding: 14px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -64,18 +65,17 @@
     .logo {
       font-weight: 700;
       font-size: 1.1rem;
-      letter-spacing: 0.5px;
     }
 
     .nav-links a {
-      margin-left: 24px;
+      margin-left: 26px;
       font-size: 0.95rem;
       font-weight: 500;
     }
 
     header {
       text-align: center;
-      padding: 180px 20px 100px;
+      padding: 190px 20px 100px;
       max-width: 1000px;
       margin: auto;
     }
@@ -87,7 +87,7 @@
     }
 
     .tagline {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       color: var(--accent);
       margin-bottom: 20px;
     }
@@ -98,12 +98,12 @@
     }
 
     section {
-      padding: 90px 20px;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
+      padding: 90px 22px;
       opacity: 0;
       transform: translateY(40px);
-      transition: all 0.8s ease;
+      transition: all 0.9s ease;
     }
 
     section.visible {
@@ -114,11 +114,13 @@
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
+    /* ABOUT */
     .about p {
       margin-bottom: 18px;
+      font-size: 1.05rem;
       color: var(--text-muted);
     }
 
@@ -126,26 +128,26 @@
     .work-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 32px;
       margin-top: 30px;
     }
 
     .work-card {
       background: var(--white);
-      border-radius: 14px;
-      padding: 26px;
-      box-shadow: 0 6px 20px var(--shadow);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 24px var(--shadow);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .work-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 14px 36px var(--shadow);
+      box-shadow: 0 18px 40px var(--shadow);
     }
 
     .work-card h3 {
       margin-bottom: 10px;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
     }
 
     .work-card p {
@@ -159,15 +161,24 @@
       font-weight: 600;
     }
 
+    /* CV */
+    .cv-box {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px var(--shadow);
+      max-width: 600px;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 50px 20px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
       background: var(--white);
+      color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       header h1 {
         font-size: 2.6rem;
@@ -181,13 +192,14 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav>
     <div class="nav-container">
       <div class="logo">Shrawan Dahal</div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#work">Work</a>
+        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -205,15 +217,21 @@
     <h2>About Me</h2>
     <p>
       I work at the intersection of storytelling, media, and social change. Trained in Journalism and Mass Communication,
-      I use communication as a tool to connect, question, and inspire action—particularly within development and community contexts.
+      I have spent the past several years using communication as a tool—not just to inform, but to connect, question,
+      and inspire action. My professional journey has taken me into the development sector, where I have worked as a
+      Program Officer and Communication Officer with NGOs and community-based organizations, shaping narratives around
+      education, youth engagement, and social awareness.
     </p>
     <p>
-      Photography has been a core part of my creative practice since 2020, allowing me to document moments that often go unnoticed.
-      For me, images are evidence, memory, and emotion.
+      Beyond written words, I speak through images. Photography has been a core part of my creative practice since 2020,
+      allowing me to document people, places, and moments that often go unnoticed. For me, a photograph is not just
+      visual content—it is evidence, memory, and emotion.
     </p>
     <p>
-      I’m deeply interested in how digital media and artificial intelligence are reshaping communication in Nepal and South Asia.
-      I believe responsible storytelling can create understanding—and understanding can lead to change.
+      I am deeply interested in how technology is reshaping communication. From digital media to artificial intelligence,
+      I explore how emerging tools can enhance storytelling, improve access to information, and strengthen civic engagement—
+      particularly in the context of Nepal and South Asia. Curious by nature and grounded in purpose, I believe that
+      meaningful stories, when told responsibly, have the power to create understanding—and understanding can lead to change.
     </p>
   </section>
 
@@ -223,24 +241,40 @@
     <div class="work-grid">
       <div class="work-card">
         <h3>Behance</h3>
-        <p>Visual and design-focused portfolio showcasing selected creative work.</p>
-        <a href="https://www.behance.net/shrawanupdahal" target="_blank">View Portfolio →</a>
+        <p>Visual and design-focused portfolio showcasing curated creative work.</p>
+        <a href="https://www.behance.net/shrawanupdahal" target="_blank">View on Behance →</a>
       </div>
       <div class="work-card">
         <h3>500px</h3>
-        <p>Curated photography gallery highlighting moments, people, and places.</p>
+        <p>Photography gallery highlighting people, places, and moments.</p>
         <a href="https://500px.com/p/dahalshrawan?view=photos" target="_blank">Explore Photos →</a>
       </div>
       <div class="work-card">
         <h3>LinkedIn</h3>
-        <p>Professional background, experience, and communication-focused work.</p>
+        <p>Professional experience, research interests, and communication work.</p>
         <a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">Connect →</a>
       </div>
       <div class="work-card">
         <h3>Instagram</h3>
-        <p>Ongoing visual storytelling and photography from the field.</p>
+        <p>Visual storytelling and photography from the field.</p>
         <a href="https://www.instagram.com/shrawan_updahal/" target="_blank">Follow →</a>
       </div>
+      <div class="work-card">
+        <h3>Facebook</h3>
+        <p>Personal and professional updates.</p>
+        <a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">Visit Profile →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-box">
+      <p>You can view or download my complete CV here:</p>
+      <a href="https://docs.google.com/document/d/1Img9Wun1OfANZILz_27lCbetYGI1SKVsn_hhTyqYHVU/edit" target="_blank">
+        Download CV →
+      </a>
     </div>
   </section>
 
@@ -249,28 +283,25 @@
     <h2>Contact</h2>
     <p>
       Open to collaborations, research, and creative projects.<br>
-      <a href="mailto:your-email@example.com">your-email@example.com</a>
+      Reach out via LinkedIn or email.
     </p>
   </section>
 
   <footer>
-    © 2026 Shrawan Dahal Upadhaya • Built with clarity & intention
+    © 2026 Shrawan Dahal Upadhaya • Portfolio Website
   </footer>
 
-  <!-- SCROLL ANIMATION SCRIPT -->
+  <!-- SCROLL ANIMATION -->
   <script>
     const sections = document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
 
     sections.forEach(section => observer.observe(section));
   </script>

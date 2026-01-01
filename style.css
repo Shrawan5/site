@@ -25,16 +25,16 @@ body{
   line-height:1.7;
 }
 
+/* HEADER */
 header{
   position:fixed;
-  top:0;
   width:100%;
+  top:0;
   backdrop-filter:blur(14px);
   background:rgba(255,255,255,.75);
   border-bottom:1px solid rgba(0,0,0,.05);
   z-index:1000;
 }
-
 body.dark header{background:rgba(2,6,23,.75)}
 
 nav{
@@ -52,7 +52,6 @@ nav a{
   color:var(--text);
   font-weight:500;
 }
-
 nav a.active,nav a:hover{color:var(--primary)}
 
 .toggle{
@@ -64,6 +63,7 @@ nav a.active,nav a:hover{color:var(--primary)}
   cursor:pointer;
 }
 
+/* MAIN */
 main{
   max-width:1100px;
   margin:auto;
@@ -76,7 +76,6 @@ section{
   transform:translateY(40px);
   transition:.8s ease;
 }
-
 section.show{opacity:1;transform:none}
 
 h1{font-size:46px}
@@ -105,7 +104,6 @@ h2{font-size:30px}
   box-shadow:0 20px 40px rgba(0,0,0,.06);
   transition:.35s ease;
 }
-
 .card:hover{transform:translateY(-10px)}
 
 .links a{

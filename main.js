@@ -1,17 +1,20 @@
-// Dark mode
-const btn=document.getElementById('themeBtn');
+// Dark Mode
+const btn = document.getElementById('themeBtn');
 if(btn){
-  btn.onclick=()=>{
+  btn.onclick = () => {
     document.body.classList.toggle('dark');
-    btn.textContent=document.body.classList.contains('dark')?'Light':'Dark';
-  }
+    btn.textContent =
+      document.body.classList.contains('dark') ? 'Light' : 'Dark';
+  };
 }
 
-// Scroll reveal animation
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-  if(e.isIntersecting)e.target.classList.add('show');
- })
-},{threshold:.2});
+// Scroll Reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:0.2});
 
-document.querySelectorAll('section').forEach(s=>observer.observe(s));
+document.querySelectorAll('section').forEach(s=>{
+  observer.observe(s);
+});

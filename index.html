@@ -1,245 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shrawan Dahal Upadhaya | Media & Communication</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --primary:#6366f1;
-  --secondary:#22d3ee;
-  --accent:#f43f5e;
-  --bg:#f8fbff;
-  --text:#0f172a;
-  --card:#ffffff;
-}
-
-body.dark{
-  --bg:#020617;
-  --text:#e5e7eb;
-  --card:#020617;
-}
-
-*{box-sizing:border-box;scroll-behavior:smooth}
-
-body{
-  margin:0;
-  font-family:Inter,sans-serif;
-  background:
-    radial-gradient(circle at top left,#eef2ff,transparent 40%),
-    radial-gradient(circle at bottom right,#ecfeff,transparent 40%),
-    var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
-
-/* HEADER */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  backdrop-filter:blur(14px);
-  background:rgba(255,255,255,.75);
-  border-bottom:1px solid rgba(0,0,0,.05);
-}
-body.dark header{background:rgba(2,6,23,.75)}
-
-nav{
-  max-width:1100px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav a{
-  margin-left:18px;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:500;
-}
-nav a.active,nav a:hover{color:var(--primary)}
-
-.toggle{
-  margin-left:20px;
-  border:none;
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
-  color:white;
-  padding:8px 16px;
-  border-radius:999px;
-  cursor:pointer;
-}
-
-/* MAIN */
-main{
-  max-width:1100px;
-  margin:auto;
-  padding:140px 20px 60px;
-}
-
-section{
-  margin-bottom:100px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:.8s ease;
-}
-section.show{opacity:1;transform:none}
-
-h1{font-size:46px;line-height:1.2}
-h2{font-size:30px;margin-bottom:20px}
-
-/* HERO */
-.badge{
-  display:inline-block;
-  padding:6px 16px;
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
-  color:#fff;
-  border-radius:999px;
-  font-size:14px;
-  margin-bottom:20px;
-}
-
-.hero p{max-width:650px;font-size:18px}
-
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-}
-.card{
-  background:var(--card);
-  padding:26px;
-  border-radius:22px;
-  box-shadow:0 20px 40px rgba(0,0,0,.06);
-  transition:.35s ease;
-  position:relative;
-  overflow:hidden;
-}
-.card::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(99,102,241,.08),transparent);
-  opacity:0;
-  transition:.4s;
-}
-.card:hover::after{opacity:1}
-.card:hover{transform:translateY(-10px)}
-
-.card h3{margin-top:0}
-
-/* WORK ICON */
-.icon{
-  font-size:28px;
-  margin-bottom:10px;
-}
-
-/* LINKS */
-.links a{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin:10px 16px 0 0;
-  text-decoration:none;
-  color:var(--primary);
-  font-weight:600;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:50px 20px;
-  font-size:14px;
-  opacity:.7;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  h1{font-size:36px}
-  h2{font-size:26px}
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-<nav>
-<strong>Shrawan Dahal</strong>
-<div>
-<a href="#about">About</a>
-<a href="#work">Work</a>
-<a href="#presence">Presence</a>
-<a href="#cv">CV</a>
-<button class="toggle" id="themeBtn">Dark</button>
-</div>
-</nav>
+  <nav>
+    <strong>Shrawan Dahal</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#presence">Presence</a>
+      <a href="blog.html">Blog</a>
+      <a href="#cv">CV</a>
+      <button class="toggle" id="themeBtn">Dark</button>
+    </div>
+  </nav>
 </header>
 
 <main>
 
 <section class="hero">
-<span class="badge">Media • Communication • Photography</span>
-<h1>Shrawan Dahal Upadhaya</h1>
-<p>
-Media and Communication professional with experience in journalism, development communication, photography, and digital storytelling. Passionate about youth engagement, research, and creative media.
-</p>
+  <span class="badge">Media • Communication • Photography</span>
+  <h1>Shrawan Dahal Upadhaya</h1>
+  <p>
+    Media and Communication professional with experience in journalism, development communication,
+    photography, and digital storytelling. Passionate about youth engagement, research, and creative media.
+  </p>
 </section>
 
 <section id="about">
-<h2>About Me</h2>
-<div class="card">
-<p>
-I hold a Bachelor's degree in Journalism and Mass Communication and have worked as a Program Officer and Communication Officer with national NGOs. Since 2020, I have been actively involved in photography and visual storytelling, documenting social issues, development initiatives, and human stories.
-</p>
-</div>
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I hold a Bachelor's degree in Journalism and Mass Communication and have worked as a Program Officer
+      and Communication Officer with national NGOs. Since 2020, I have been actively involved in photography
+      and visual storytelling.
+    </p>
+  </div>
 </section>
 
 <section id="work">
-<h2>Work & Experience</h2>
-<div class="grid">
-<div class="card">
-<div class="icon">📊</div>
-<h3>Program Officer</h3>
-<p>SPARSHA Nepal – Program planning, training facilitation, youth engagement, reporting.</p>
-</div>
-
-<div class="card">
-<div class="icon">📝</div>
-<h3>Communication Officer</h3>
-<p>NGO Sector – Content creation, documentation, photography, digital campaigns.</p>
-</div>
-
-<div class="card">
-<div class="icon">📷</div>
-<h3>Photography</h3>
-<p>Documentary, portrait, and event photography across digital platforms.</p>
-</div>
-</div>
+  <h2>Work & Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Program Officer</h3>
+      <p>SPARSHA Nepal – Program planning, training facilitation, youth engagement, reporting.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Communication Officer</h3>
+      <p>Content creation, documentation, photography, and digital campaigns.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📷</div>
+      <h3>Photography</h3>
+      <p>Documentary, portrait, and event photography across platforms.</p>
+    </div>
+  </div>
 </section>
 
 <section id="presence">
-<h2>Digital Presence</h2>
-<div class="card links">
-<a href="https://www.instagram.com/shrawan_updahal/" target="_blank">📸 Instagram</a>
-<a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">📘 Facebook</a>
-<a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">💼 LinkedIn</a>
-<a href="https://tribhuvan.academia.edu/ShrawanDahalUpadhaya" target="_blank">🎓 Academia</a>
-<a href="https://www.youtube.com/@shrawandahal" target="_blank">▶️ YouTube</a>
-</div>
+  <h2>Digital Presence</h2>
+  <div class="card links">
+    <a href="https://www.instagram.com/shrawan_updahal/" target="_blank">📸 Instagram</a>
+    <a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">📘 Facebook</a>
+    <a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">💼 LinkedIn</a>
+    <a href="https://tribhuvan.academia.edu/ShrawanDahalUpadhaya" target="_blank">🎓 Academia</a>
+    <a href="https://www.youtube.com/@shrawandahal" target="_blank">▶️ YouTube</a>
+  </div>
 </section>
 
 <section id="cv">
-<h2>Curriculum Vitae</h2>
-<div class="card">
-<p>Download my detailed CV including education, experience, skills, and certifications.</p>
-<a class="toggle" href="#">Download CV</a>
-</div>
+  <h2>Curriculum Vitae</h2>
+  <div class="card">
+    <p>Download my detailed CV including education, experience, and certifications.</p>
+    <a class="toggle" href="#">Download CV</a>
+  </div>
 </section>
 
 </main>
@@ -248,13 +93,6 @@ I hold a Bachelor's degree in Journalism and Mass Communication and have worked 
 © 2025 Shrawan Dahal Upadhaya • Built with HTML, CSS & JavaScript
 </footer>
 
-<script>
-/* Dark Mode */
-const btn=document.getElementById('themeBtn');
-btn.onclick=()=>{
- document.body.classList.toggle('dark');
- btn.textContent=document.body.classList.contains('dark')?'Light':'Dark';
-}
-
-/* Scroll reveal */
-const observer=new IntersectionObserver(entries=>{
+<script src="js/main.js"></script>
+</body>
+</html>

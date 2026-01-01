@@ -1,274 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shrawan Dahal Upadhaya | Media, Communication & Photography</title>
-  <meta name="description" content="Personal portfolio of Shrawan Dahal Upadhaya – Media & Communication professional, photographer, researcher." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shrawan Dahal Upadhaya | Media & Communication</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #4f46e5;
-      --secondary: #06b6d4;
-      --bg: #f9fafb;
-      --text: #111827;
-      --card: #ffffff;
-    }
+<style>
+:root{
+  --primary:#6366f1;
+  --secondary:#22d3ee;
+  --accent:#f43f5e;
+  --bg:#f8fbff;
+  --text:#0f172a;
+  --card:#ffffff;
+}
 
-    body.dark {
-      --bg: #0f172a;
-      --text: #e5e7eb;
-      --card: #020617;
-    }
+body.dark{
+  --bg:#020617;
+  --text:#e5e7eb;
+  --card:#020617;
+}
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+*{box-sizing:border-box;scroll-behavior:smooth}
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:
+    radial-gradient(circle at top left,#eef2ff,transparent 40%),
+    radial-gradient(circle at bottom right,#ecfeff,transparent 40%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  backdrop-filter:blur(14px);
+  background:rgba(255,255,255,.75);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+body.dark header{background:rgba(2,6,23,.75)}
 
-    body.dark header {
-      background: rgba(2,6,23,0.8);
-    }
+nav{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+nav a.active,nav a:hover{color:var(--primary)}
 
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.toggle{
+  margin-left:20px;
+  border:none;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  color:white;
+  padding:8px 16px;
+  border-radius:999px;
+  cursor:pointer;
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
+/* MAIN */
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:140px 20px 60px;
+}
 
-    nav a.active,
-    nav a:hover {
-      color: var(--primary);
-    }
+section{
+  margin-bottom:100px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+section.show{opacity:1;transform:none}
 
-    .toggle {
-      cursor: pointer;
-      border: none;
-      background: var(--primary);
-      color: white;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
+h1{font-size:46px;line-height:1.2}
+h2{font-size:30px;margin-bottom:20px}
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+/* HERO */
+.badge{
+  display:inline-block;
+  padding:6px 16px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  color:#fff;
+  border-radius:999px;
+  font-size:14px;
+  margin-bottom:20px;
+}
 
-    section {
-      margin-bottom: 90px;
-      animation: fadeUp 0.8s ease both;
-    }
+.hero p{max-width:650px;font-size:18px}
 
-    h1, h2 {
-      line-height: 1.3;
-    }
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:var(--card);
+  padding:26px;
+  border-radius:22px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+  transition:.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(99,102,241,.08),transparent);
+  opacity:0;
+  transition:.4s;
+}
+.card:hover::after{opacity:1}
+.card:hover{transform:translateY(-10px)}
 
-    h1 {
-      font-size: 42px;
-    }
+.card h3{margin-top:0}
 
-    h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
+/* WORK ICON */
+.icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 650px;
-    }
+/* LINKS */
+.links a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:10px 16px 0 0;
+  text-decoration:none;
+  color:var(--primary);
+  font-weight:600;
+}
 
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: white;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px 20px;
+  font-size:14px;
+  opacity:.7;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-      margin-top: 0;
-    }
-
-    .links a {
-      display: inline-block;
-      margin-right: 15px;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid rgba(0,0,0,0.05);
-      font-size: 14px;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 34px; }
-      h2 { font-size: 26px; }
-      nav a { margin-left: 12px; }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:768px){
+  h1{font-size:36px}
+  h2{font-size:26px}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <nav>
-    <strong>Shrawan Dahal</strong>
-    <div>
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#presence">Presence</a>
-      <a href="#cv">CV</a>
-      <button class="toggle" id="themeBtn">Dark</button>
-    </div>
-  </nav>
+<nav>
+<strong>Shrawan Dahal</strong>
+<div>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+<a href="#presence">Presence</a>
+<a href="#cv">CV</a>
+<button class="toggle" id="themeBtn">Dark</button>
+</div>
+</nav>
 </header>
 
 <main>
 
-  <section class="hero">
-    <span class="badge">Media • Communication • Photography</span>
-    <h1>Shrawan Dahal Upadhaya</h1>
-    <p>
-      Media and Communication professional with experience in journalism, development communication, photography, and digital storytelling. Passionate about youth engagement, research, and creative media.
-    </p>
-  </section>
+<section class="hero">
+<span class="badge">Media • Communication • Photography</span>
+<h1>Shrawan Dahal Upadhaya</h1>
+<p>
+Media and Communication professional with experience in journalism, development communication, photography, and digital storytelling. Passionate about youth engagement, research, and creative media.
+</p>
+</section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I hold a Bachelor's degree in Journalism and Mass Communication and have worked as a Program Officer and Communication Officer with national NGOs. Since 2020, I have been actively involved in photography and visual storytelling, documenting social issues, development initiatives, and human stories.
-      </p>
-    </div>
-  </section>
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>
+I hold a Bachelor's degree in Journalism and Mass Communication and have worked as a Program Officer and Communication Officer with national NGOs. Since 2020, I have been actively involved in photography and visual storytelling, documenting social issues, development initiatives, and human stories.
+</p>
+</div>
+</section>
 
-  <section id="work">
-    <h2>Work & Experience</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Program Officer</h3>
-        <p>SPARSHA Nepal – Program planning, training facilitation, youth engagement, reporting.</p>
-      </div>
-      <div class="card">
-        <h3>Communication Officer</h3>
-        <p>NGO Sector – Content creation, documentation, photography, digital campaigns.</p>
-      </div>
-      <div class="card">
-        <h3>Photography</h3>
-        <p>Documentary, portrait, and event photography shared across digital platforms.</p>
-      </div>
-    </div>
-  </section>
+<section id="work">
+<h2>Work & Experience</h2>
+<div class="grid">
+<div class="card">
+<div class="icon">📊</div>
+<h3>Program Officer</h3>
+<p>SPARSHA Nepal – Program planning, training facilitation, youth engagement, reporting.</p>
+</div>
 
-  <section id="presence">
-    <h2>Digital Presence</h2>
-    <div class="card links">
-      <a href="https://www.instagram.com/shrawan_updahal/" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">Facebook</a>
-      <a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">LinkedIn</a>
-      <a href="https://tribhuvan.academia.edu/ShrawanDahalUpadhaya" target="_blank">Academia</a>
-      <a href="https://www.youtube.com/@shrawandahal" target="_blank">YouTube</a>
-    </div>
-  </section>
+<div class="card">
+<div class="icon">📝</div>
+<h3>Communication Officer</h3>
+<p>NGO Sector – Content creation, documentation, photography, digital campaigns.</p>
+</div>
 
-  <section id="cv">
-    <h2>Curriculum Vitae</h2>
-    <div class="card">
-      <p>You can download my detailed CV including education, experience, skills, and certifications.</p>
-      <a class="toggle" href="#">Download CV</a>
-    </div>
-  </section>
+<div class="card">
+<div class="icon">📷</div>
+<h3>Photography</h3>
+<p>Documentary, portrait, and event photography across digital platforms.</p>
+</div>
+</div>
+</section>
+
+<section id="presence">
+<h2>Digital Presence</h2>
+<div class="card links">
+<a href="https://www.instagram.com/shrawan_updahal/" target="_blank">📸 Instagram</a>
+<a href="https://www.facebook.com/shrawan.dahal.2025" target="_blank">📘 Facebook</a>
+<a href="https://www.linkedin.com/in/shrawan-upadhaya-dahal-82551919b/" target="_blank">💼 LinkedIn</a>
+<a href="https://tribhuvan.academia.edu/ShrawanDahalUpadhaya" target="_blank">🎓 Academia</a>
+<a href="https://www.youtube.com/@shrawandahal" target="_blank">▶️ YouTube</a>
+</div>
+</section>
+
+<section id="cv">
+<h2>Curriculum Vitae</h2>
+<div class="card">
+<p>Download my detailed CV including education, experience, skills, and certifications.</p>
+<a class="toggle" href="#">Download CV</a>
+</div>
+</section>
 
 </main>
 
 <footer>
-  © 2025 Shrawan Dahal Upadhaya • Built with HTML, CSS & JavaScript
+© 2025 Shrawan Dahal Upadhaya • Built with HTML, CSS & JavaScript
 </footer>
 
 <script>
-  const btn = document.getElementById('themeBtn');
-  btn.onclick = () => {
-    document.body.classList.toggle('dark');
-    btn.textContent = document.body.classList.contains('dark') ? 'Light' : 'Dark';
-  };
+/* Dark Mode */
+const btn=document.getElementById('themeBtn');
+btn.onclick=()=>{
+ document.body.classList.toggle('dark');
+ btn.textContent=document.body.classList.contains('dark')?'Light':'Dark';
+}
 
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      const top = window.scrollY;
-      if (top >= sec.offsetTop - 150) current = sec.id;
-    });
-    navLinks.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
+/* Scroll reveal */
+const observer=new IntersectionObserver(entries=>{
